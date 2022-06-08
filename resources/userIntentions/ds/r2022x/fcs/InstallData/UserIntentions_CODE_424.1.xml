@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UserIntentions mediaName="CODE\linux_a64\ENOVIA_FCS.media" mediaVersion="424.1">
+  <SetVariable name="Java@jdk" value="/appl/java/jdk"/>
+  <SetVariable name="installEmbeddedServerJRE" value="false"/>
+  <SetVariable name="install_Embedded_TomEE" value="false"/>
+  <SetVariable name="TomEEPath" value="/appl/tomee/fcs"/>
+  <SetVariable name="fcsSrvURL" value="https://srv1.dev.dsisp1.com/fcs"/>
+  <SetVariable name="X3DCSMA_3DSpaceURL" value="https://srv1.dev.dsisp1.com/3dspace"/>
+  <SetVariable name="Text_FcsAppServerStartup" value="startup.sh"/>
+  <SetVariable name="DSYWelcomePanel"/>
+  <SetVariable name="TARGET_PATH" value="/appl/ds/r2022x/fcs"/>
+  <SetVariable name="FinishPanel"/>
+</UserIntentions>

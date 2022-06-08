@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UserIntentions mediaName="CODE\linux_a64\ENOVIA_SXI.media" mediaVersion="424.1">
+  <SetVariable name="FullCloud_URL" value="http://ip-10-0-10-81.us-east-2.compute.internal:19000"/>
+  <SetVariable name="FullCloud_NumSlices" value="1"/>
+  <SetVariable name="FullCloud_NumAnalyzers" value="4"/>
+  <SetVariableProtected name="FullCloud_AdminPassword" value="Put your password here."/>
+  <SetVariable item="NonHACloudview" name="Radio_InstallMODE" value="true"/>
+  <SetVariable name="PATH_CVDATADIR_CUSTO" value="/index/3dspaceindex/cv/data"/>
+  <SetVariable item="Custom" name="Radio_mode" value="true"/>
+  <SetVariable name="DSYWelcomePanel"/>
+  <SetVariable name="TARGET_PATH" value="/appl/ds/r2022x/3dspaceindex"/>
+  <SetVariable name="FinishPanel"/>
+</UserIntentions>

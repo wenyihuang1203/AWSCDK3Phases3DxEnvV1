@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UserIntentions mediaName="CODE\linux_a64\ENOVIA_XPC.media" mediaVersion="424">
+  <SetVariable name="PATH_PH_Server" value="/appl/ds/r2022x/3dspace"/>
+  <SetVariable name="Java@jdk" value="/appl/java/jdk"/>
+  <SetVariable name="Text_SuperUserName" value="creator"/>
+  <SetVariableProtected name="Text_SuperUserPwd" value="Put your password here."/>
+  <SetVariable name="CheckInstallModeVPM" value="true"/>
+  <SetVariable name="CheckInstallModeBOM" value="true"/>
+  <SetVariable name="TextGatewayURLXPC" value="http://localhost:8090/3DEXPERIENCEPlatformGW"/>
+  <SetVariable name="TextXPDMSiteId" value="XPDM"/>
+  <SetVariable name="DSYWelcomePanel"/>
+  <SetVariable name="TARGET_PATH" value="/appl/ds/r2022x/3dspace/Apps/X-PDMXMLV6Connector/V6R2022x"/>
+  <!--Adapter for X-PDM Foundation-->
+  <SetVariable item="CODE\linux_a64\XPC.prd" name="SelectProduct" value="true"/>
+  <SetVariable name="FinishPanel"/>
+</UserIntentions>

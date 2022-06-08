@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UserIntentions mediaName="CODE\linux_a64\X3D_CMNT.media" mediaVersion="424">
+  <SetVariable name="Java@jdk" value="/appl/java/jdk"/>
+  <SetVariable name="installEmbeddedServerJRE" value="false"/>
+  <SetVariable name="X3DCSMA_3DPassportURL" value="https://srv1.dev.dsisp1.com/3dpassport"/>
+  <SetVariable name="X3DCSMA_3DDashboardURL" value="https://srv1.dev.dsisp1.com/3ddashboard"/>
+  <SetVariable name="X3DCSMA_3DCompassURL" value="https://srv1.dev.dsisp1.com/3dspace"/>
+  <SetVariable name="X3DCSMA_3DCommentURL" value="https://srv1.dev.dsisp1.com/3dcomment"/>
+  <SetVariable name="X3DCSMA_3DNotificationURL" value="https://srv1.dev.dsisp1.com/3dnotification"/>
+  <SetVariable name="SOCIAL_SHARED_DIR" value="/appl/ds/r2022x/data/3dcommentdata"/>
+  <SetVariable name="SOCIAL_LOG_DIR" value="/appl/ds/r2022x/logs/3dcommentlogs"/>
+  <SetVariable name="SOCIAL_TMP_DIR" value="/appl/ds/r2022x/temp/3dcommenttemp"/>
+  <SetVariable name="install_Embedded_TomEE" value="false"/>
+  <SetVariable name="TomEEPath" value="/appl/tomee/3dcomment"/>
+  <SetVariable name="SOCIAL_DB_MSSQL_SERVER" value="localhost"/>
+  <SetVariable name="SOCIAL_DB_MSSQL_DBNAME" value="x3dcommentdb"/>
+  <SetVariable name="SOCIAL_DB_MSSQL_ADMIN_USER" value="x3dsadmin"/>
+  <SetVariableProtected name="SOCIAL_DB_MSSQL_ADMIN_PASSWORD" value="Put your password here."/>
+  <SetVariable name="SOCIAL_DB_MSSQL_USER" value="x3ds"/>
+  <SetVariableProtected name="SOCIAL_DB_MSSQL_PASSWORD" value="Put your password here."/>
+  <SetVariable item="sqlserver" name="SOCIAL_DB_TYPE" value="true"/>
+  <SetVariable name="IS_BATCH_SERVER" value="true"/>
+  <SetVariable name="DSYWelcomePanel"/>
+  <SetVariable name="TARGET_PATH" value="/appl/ds/r2022x/3dcomment"/>
+  <SetVariable name="FinishPanel"/>
+</UserIntentions>

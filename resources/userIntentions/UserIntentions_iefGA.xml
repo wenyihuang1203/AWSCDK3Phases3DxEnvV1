@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UserIntentions mediaName="CODE\linux_a64\ENOVIA_IEF.media" mediaVersion="424">
+  <SetVariable name="PATH_PH_Server" value="/appl/ds/r2022x/3DSpace"/>
+  <SetVariable name="Text_SuperUserName" value="creator"/>
+  <SetVariable name="Text_SuperUserPwd" value=""/>
+  <SetVariable name="DSYWelcomePanel"/>
+  <SetVariable name="TARGET_PATH" value="/appl/ds/r2022x/3DSpace/Apps/IntegrationExchangeFramework/V6R2022x"/>
+  <SetVariable name="FinishPanel"/>
+</UserIntentions>

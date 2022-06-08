@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
-import { aws_ec2 as ec2 } from 'aws-cdk-lib';
+import { aws_ec2 as ec2 } from 'aws-cdk-lib';
 import { SAOCgetVPC } from '../lib/SAOCgetVPC';
 import { SaocDatabaseStack } from '../lib/SaocDatabaseStack';
 import { SAOCcreateSecurityGroup } from '../lib/SAOCcreateSecurityGroup';
@@ -64,7 +64,7 @@ const myVpcName = 'VPC-SAOC'
 const Name4GetVPCStack = 'getVpcSaoc'
 
 const myVpcStackProps = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   myVpcName: myVpcName,
   stackName: Name4GetVPCStack
 }
@@ -75,9 +75,9 @@ const vpc = vpcStack.vpc;
 //=== stack 2: create 6 security groups ===//
 //=========================================//
 const mySGStackProps = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
-  prefix:  prefix,
+  prefix: prefix,
   sg1Name: sg1Name,
   sg2Name: sg2Name,
   sg3Name: sg3Name,
@@ -91,7 +91,7 @@ const mySGStackProps = {
   sg5Title: sg5Title,
   sg6Title: sg6Title,
 }
-const sgStack = new SAOCcreateSecurityGroup(app, name4CreateSG, mySGStackProps );
+const sgStack = new SAOCcreateSecurityGroup(app, name4CreateSG, mySGStackProps);
 
 //============================================================================//
 //=== global variable mySG001, mySG002, mySG003, mySG004, mySG005, mySG006 ===//
@@ -116,7 +116,7 @@ const instanceTypeM5XLarge = ec2.InstanceType.of(ec2.InstanceClass.M5, ec2.Insta
 //=============================//
 //=== Define originsl AMI   ===//
 //=============================//
-const Redhat8AMI = ec2.MachineImage.genericLinux({'us-west-2': 'ami-0b28dfc7adc325ef4'})
+const Redhat8AMI = ec2.MachineImage.genericLinux({ 'us-west-2': 'ami-0b28dfc7adc325ef4' })
 
 //=============================================//
 //=== Define EBS device Volume type for EC2 ===//
@@ -129,7 +129,7 @@ const io2Type = ec2.EbsDeviceVolumeType.IO2
 //=== stack to create DB Server         ===//
 //=========================================//
 const SaocDBStackProps = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG003,
   subnetGroupName: 'Private',
@@ -148,13 +148,13 @@ const SaocDBStackProps = {
   volumeSize3: 30,
   volumeSize4: 30,
 }
-const SaocDBInstance = new SaocDatabaseStack(app, 'SaocDatabase-AWP3DX', SaocDBStackProps );
+const SaocDBInstance = new SaocDatabaseStack(app, 'SaocDatabase-AWP3DX', SaocDBStackProps);
 
 //=================================================//
 //=== stack for Bastion creation             ===//
 //=================================================//
 const SaocBastionStackProps = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG001,
   subnetGroupName: 'Public',
@@ -169,13 +169,13 @@ const SaocBastionStackProps = {
   TagType: 'Bastion-AWP3DX',
   volumeSize: 50,
 }
-const SaocBastionInstance = new SaocBastionStack(app, 'SaocBastion-AWP3DX', SaocBastionStackProps );
+const SaocBastionInstance = new SaocBastionStack(app, 'SaocBastion-AWP3DX', SaocBastionStackProps);
 
 //=================================================//
 //=== stack for 3dpassport creation             ===//
 //=================================================//
 const SaocPassportStackProps = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG002,
   subnetGroupName: 'Private',
@@ -190,13 +190,13 @@ const SaocPassportStackProps = {
   TagType: 'Passport-AWP3DX',
   volumeSize: 50,
 }
-const SaocPassportInstance = new SaocPassportStack(app, 'SaocPassport-AWP3DX', SaocPassportStackProps );
+const SaocPassportInstance = new SaocPassportStack(app, 'SaocPassport-AWP3DX', SaocPassportStackProps);
 
 //=================================================//
 //=== stack for 3ddashboard creation            ===//
 //=================================================//
 const SaocDashboardStackProps = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG002,
   subnetGroupName: 'Private',
@@ -211,13 +211,13 @@ const SaocDashboardStackProps = {
   TagType: 'Dashboard-AWP3DX',
   volumeSize: 50,
 }
-const SaocDashboardInstance = new SaocDashboardStack(app, 'SaocDashboard-AWP3DX', SaocDashboardStackProps );
+const SaocDashboardInstance = new SaocDashboardStack(app, 'SaocDashboard-AWP3DX', SaocDashboardStackProps);
 
 //=================================================//
 //=== stack for 3dspace creation                ===//
 //=================================================//
 const SaocSpaceStackProps = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG002,
   subnetGroupName: 'Private',
@@ -232,13 +232,13 @@ const SaocSpaceStackProps = {
   TagType: 'Space-AWP3DX',
   volumeSize: 50,
 }
-const SaocSpaceInstance = new SaocSpaceStack(app, 'SaocSpace-AWP3DX', SaocSpaceStackProps );
+const SaocSpaceInstance = new SaocSpaceStack(app, 'SaocSpace-AWP3DX', SaocSpaceStackProps);
 
 //=================================================//
 //=== stack for 3dcomment creation              ===//
 //=================================================//
 const SaocCommentStackProps = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG002,
   subnetGroupName: 'Private',
@@ -253,13 +253,13 @@ const SaocCommentStackProps = {
   TagType: 'Comment-AWP3DX',
   volumeSize: 50,
 }
-const SaocCommentInstance = new SaocCommentStack(app, 'SaocComment-AWP3DX', SaocCommentStackProps );
+const SaocCommentInstance = new SaocCommentStack(app, 'SaocComment-AWP3DX', SaocCommentStackProps);
 
 //=================================================//
 //=== stack for 3dNotification creation         ===//
 //=================================================//
 const SaocNotificationStackProps = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG002,
   subnetGroupName: 'Private',
@@ -274,13 +274,13 @@ const SaocNotificationStackProps = {
   TagType: 'Notification-AWP3DX',
   volumeSize: 50,
 }
-const SaocNotificationInstance = new SaocNotificationStack(app, 'SaocNotification-AWP3DX', SaocNotificationStackProps );
+const SaocNotificationInstance = new SaocNotificationStack(app, 'SaocNotification-AWP3DX', SaocNotificationStackProps);
 
 //=================================================//
 //=== stack for Federated creation              ===//
 //=================================================//
 const SaocFederatedStackProps = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG002,
   subnetGroupName: 'Private',
@@ -295,13 +295,13 @@ const SaocFederatedStackProps = {
   TagType: 'Federated-AWP3DX',
   volumeSize: 50,
 }
-const SaocFederatedInstance = new SaocFederatedStack(app, 'SaocFederated-AWP3DX', SaocFederatedStackProps );
+const SaocFederatedInstance = new SaocFederatedStack(app, 'SaocFederated-AWP3DX', SaocFederatedStackProps);
 
 //=================================================//
 //=== stack for FCS creation                    ===//
 //=================================================//
 const SaocFcsStackProps = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG002,
   subnetGroupName: 'Private',
@@ -316,13 +316,13 @@ const SaocFcsStackProps = {
   TagType: 'Fcs-AWP3DX',
   volumeSize: 50,
 }
-const SaocFcsInstance = new SaocFcsStack(app, 'SaocFcs-AWP3DX', SaocFcsStackProps );
+const SaocFcsInstance = new SaocFcsStack(app, 'SaocFcs-AWP3DX', SaocFcsStackProps);
 
 //=================================================//
 //=== stack for FTS creation                    ===//
 //=================================================//
 const SaocFtsStackProps = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG005,
   subnetGroupName: 'Private',
@@ -337,13 +337,13 @@ const SaocFtsStackProps = {
   TagType: 'Fts-AWP3DX',
   volumeSize: 50,
 }
-const SaocFtsInstance = new SaocFtsStack(app, 'SaocFts-AWP3DX', SaocFtsStackProps );
+const SaocFtsInstance = new SaocFtsStack(app, 'SaocFts-AWP3DX', SaocFtsStackProps);
 
 //=================================================//
 //=== stack for 3DIndexingServer creation       ===//
 //=================================================//
 const Saoc3DIndexStackProps = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG002,
   subnetGroupName: 'Private',
@@ -358,13 +358,13 @@ const Saoc3DIndexStackProps = {
   TagType: 'D3Index-AWP3DX',
   volumeSize: 50,
 }
-const Saoc3DIndexInstance = new Saoc3DIndexStack(app, 'Saoc3DIndex-AWP3DX', Saoc3DIndexStackProps );
+const Saoc3DIndexInstance = new Saoc3DIndexStack(app, 'Saoc3DIndex-AWP3DX', Saoc3DIndexStackProps);
 
 //=================================================//
 //=== stack for 3DSwym creation                 ===//
 //=================================================//
 const SaocSwymStackProps = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG006,
   subnetGroupName: 'Private',
@@ -379,13 +379,13 @@ const SaocSwymStackProps = {
   TagType: 'Swym-AWP3DX',
   volumeSize: 50,
 }
-const SaocSwymInstance = new SaocSwymStack(app, 'SaocSwym-AWP3DX', SaocSwymStackProps );
+const SaocSwymInstance = new SaocSwymStack(app, 'SaocSwym-AWP3DX', SaocSwymStackProps);
 
 //=================================================//
 //=== stack for 3DOrch creation                 ===//
 //=================================================//
 const SaocOrchStackProps = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG002,
   subnetGroupName: 'Private',
@@ -400,7 +400,7 @@ const SaocOrchStackProps = {
   TagType: 'Orch-AWP3DX',
   volumeSize: 50,
 }
-const SaocOrchInstance = new SaocOrchStack(app, 'SaocOrch-AWP3DX', SaocOrchStackProps );
+const SaocOrchInstance = new SaocOrchStack(app, 'SaocOrch-AWP3DX', SaocOrchStackProps);
 
 
 
@@ -408,7 +408,7 @@ const SaocOrchInstance = new SaocOrchStack(app, 'SaocOrch-AWP3DX', SaocOrchStack
 //=== stack for NFS creation                    ===//
 //=================================================//
 const SaocNfsStackProps = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG004,
   subnetGroupName: 'Private',
@@ -423,13 +423,13 @@ const SaocNfsStackProps = {
   TagType: 'Nfs-AWP3DX',
   volumeSize: 100,
 }
-const SaocNfsInstance = new SaocNfsStack(app, 'SaocNfs-AWP3DX', SaocNfsStackProps );
+const SaocNfsInstance = new SaocNfsStack(app, 'SaocNfs-AWP3DX', SaocNfsStackProps);
 
 //=================================================//
 //=== stack for multi userData creation         ===//
 //=================================================//
 const userdataStackProps = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG006,
   subnetGroupName: 'Private',
@@ -444,7 +444,7 @@ const userdataStackProps = {
   TagType: 'userData-AWP3DX',
   volumeSize: 50,
 }
-const userdataInstance = new SaocUserdatasStack(app, 'multipartUserDataStack', userdataStackProps );
+const userdataInstance = new SaocUserdatasStack(app, 'multipartUserDataStack', userdataStackProps);
 
 //=====================================//
 //=== add stack dependency  ===========//
@@ -483,7 +483,7 @@ SaocSwymInstance.addDependency(SaocDBInstance)
 //=== Variables used for Launching      ===//
 //=========================================//
 const avZone = 'us-west-2c'
-const ownerId ='201113909371' //needs to be changed
+const ownerId = '201113909371' //needs to be changed
 const bucketName = 'dsis-3dexp-binaries-us-east-2-201113909371'
 const dbPrivateIP = '10.4.12.10'
 const subnetID = 'subnet-0b084447b36c71c2e'
@@ -498,7 +498,7 @@ const rhel8DatabaseServerAmi = new ec2.LookupMachineImage({
 });
 
 const rhel8ec2DatabaseProp = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG003,
   subnetID: 'subnet-0b084447b36c71c2e',
@@ -512,7 +512,7 @@ const rhel8ec2DatabaseProp = {
   bucketName: bucketName,
   privateIpAddress: dbPrivateIP,
 }
-const RHEL8Ec2Database = new RHEL8LaunchEc2DbServer(app, 'RHEL8Ec2DbServer', rhel8ec2DatabaseProp )
+const RHEL8Ec2Database = new RHEL8LaunchEc2DbServer(app, 'RHEL8Ec2DbServer', rhel8ec2DatabaseProp)
 
 //===============================================//
 //=== launch 1: autoscalinggroup Bastion     ===//
@@ -522,7 +522,7 @@ const rhel8BastionServerAmi = new ec2.LookupMachineImage({
   owners: [ownerId],
 });
 const rhel8AsgBastionProp = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG001,
   subnetID: subnetIDBastion,
@@ -538,7 +538,7 @@ const rhel8AsgBastionProp = {
   desiredCapacity: 1,
   maxCapacity: 1,
 }
-const RHEL8ASGBastion = new RHEL8LaunchASGAppServer(app, 'RHEL8ASGBastionServer', rhel8AsgBastionProp )
+const RHEL8ASGBastion = new RHEL8LaunchASGAppServer(app, 'RHEL8ASGBastionServer', rhel8AsgBastionProp)
 
 //===============================================//
 //=== launch 2: autoscalinggroup passport     ===//
@@ -548,7 +548,7 @@ const rhel8PassportServerAmi = new ec2.LookupMachineImage({
   owners: [ownerId],
 });
 const rhel8AsgPassportProp = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG002,
   subnetID: subnetID,
@@ -564,7 +564,7 @@ const rhel8AsgPassportProp = {
   desiredCapacity: 1,
   maxCapacity: 1,
 }
-const RHEL8ASGPassport = new RHEL8LaunchASGAppServer(app, 'RHEL8ASGPassportServer', rhel8AsgPassportProp )
+const RHEL8ASGPassport = new RHEL8LaunchASGAppServer(app, 'RHEL8ASGPassportServer', rhel8AsgPassportProp)
 
 //===============================================//
 //=== launch 3: autoscalinggroup dashboard    ===//
@@ -574,7 +574,7 @@ const rhel8DashboardServerAmi = new ec2.LookupMachineImage({
   owners: [ownerId],
 });
 const rhel8AsgDashboardProp = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG002,
   subnetID: subnetID,
@@ -590,7 +590,7 @@ const rhel8AsgDashboardProp = {
   desiredCapacity: 1,
   maxCapacity: 1,
 }
-const RHEL8ASGDashboard = new RHEL8LaunchASGAppServer(app, 'RHEL8ASGDashboardServer', rhel8AsgDashboardProp )
+const RHEL8ASGDashboard = new RHEL8LaunchASGAppServer(app, 'RHEL8ASGDashboardServer', rhel8AsgDashboardProp)
 
 //===============================================//
 //=== launch 4: autoscalinggroup space        ===//
@@ -600,7 +600,7 @@ const rhel8SpaceServerAmi = new ec2.LookupMachineImage({
   owners: [ownerId],
 });
 const rhel8AsgSpaceProp = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG002,
   subnetID: subnetID,
@@ -616,7 +616,7 @@ const rhel8AsgSpaceProp = {
   desiredCapacity: 1,
   maxCapacity: 1,
 }
-const RHEL8ASGSpace = new RHEL8LaunchASGAppServer(app, 'RHEL8ASGSpaceServer', rhel8AsgSpaceProp )
+const RHEL8ASGSpace = new RHEL8LaunchASGAppServer(app, 'RHEL8ASGSpaceServer', rhel8AsgSpaceProp)
 
 //============================================//
 //=== launch 5: 3dswym autoscalinggroup    ===//
@@ -627,7 +627,7 @@ const rhel8SwymServerAmi = new ec2.LookupMachineImage({
 });
 
 const rhel8AsgSwymProp = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG006,
   subnetID: 'subnet-0b084447b36c71c2e',
@@ -643,7 +643,7 @@ const rhel8AsgSwymProp = {
   desiredCapacity: 1,
   maxCapacity: 1,
 }
-const RHEL8ASGSwym = new RHEL8LaunchASGAppServer(app, 'RHEL8ASGSwymServer', rhel8AsgSwymProp )
+const RHEL8ASGSwym = new RHEL8LaunchASGAppServer(app, 'RHEL8ASGSwymServer', rhel8AsgSwymProp)
 
 //============================================//
 //=== launch 6: 3dcomment autoscalinggroup ===//
@@ -654,7 +654,7 @@ const rhel8CommentServerAmi = new ec2.LookupMachineImage({
 });
 
 const rhel8AsgCommentProp = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG002,
   subnetID: 'subnet-0b084447b36c71c2e',
@@ -670,7 +670,7 @@ const rhel8AsgCommentProp = {
   desiredCapacity: 1,
   maxCapacity: 1,
 }
-const RHEL8ASGComment = new RHEL8LaunchASGAppServer(app, 'RHEL8ASGCommentServer', rhel8AsgCommentProp )
+const RHEL8ASGComment = new RHEL8LaunchASGAppServer(app, 'RHEL8ASGCommentServer', rhel8AsgCommentProp)
 
 //====================================================//
 //=== launch 7: 3dnotification autoscalinggroup    ===//
@@ -682,7 +682,7 @@ const rhel8NotificationServerAmi = new ec2.LookupMachineImage({
 });
 
 const rhel8AsgNotificationProp = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG002,
   subnetID: 'subnet-0b084447b36c71c2e',
@@ -698,7 +698,7 @@ const rhel8AsgNotificationProp = {
   desiredCapacity: 1,
   maxCapacity: 1,
 }
-const RHEL8ASGNotification = new RHEL8LaunchASGAppServer(app, 'RHEL8ASGNotificationServer',rhel8AsgNotificationProp)
+const RHEL8ASGNotification = new RHEL8LaunchASGAppServer(app, 'RHEL8ASGNotificationServer', rhel8AsgNotificationProp)
 
 //====================================================//
 //=== launch 8: federated autoscalinggroup         ===//
@@ -710,7 +710,7 @@ const rhel8FederatedServerAmi = new ec2.LookupMachineImage({
 });
 
 const rhel8AsgFederatedProp = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG002,
   subnetID: 'subnet-0b084447b36c71c2e',
@@ -726,7 +726,7 @@ const rhel8AsgFederatedProp = {
   desiredCapacity: 1,
   maxCapacity: 1,
 }
-const RHEL8ASGFederated = new RHEL8LaunchASGAppServer(app, 'RHEL8ASGFederatedServer',rhel8AsgFederatedProp)
+const RHEL8ASGFederated = new RHEL8LaunchASGAppServer(app, 'RHEL8ASGFederatedServer', rhel8AsgFederatedProp)
 
 //====================================================//
 //=== launch 9: FCS autoscalinggroup               ===//
@@ -738,7 +738,7 @@ const rhel8FcsServerAmi = new ec2.LookupMachineImage({
 });
 
 const rhel8AsgFcsProp = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG002,
   subnetID: 'subnet-0b084447b36c71c2e',
@@ -754,7 +754,7 @@ const rhel8AsgFcsProp = {
   desiredCapacity: 1,
   maxCapacity: 1,
 }
-const RHEL8ASGFcs = new RHEL8LaunchASGAppServer(app, 'RHEL8ASGFcsServer', rhel8AsgFcsProp )
+const RHEL8ASGFcs = new RHEL8LaunchASGAppServer(app, 'RHEL8ASGFcsServer', rhel8AsgFcsProp)
 
 //====================================================//
 //=== launch 10: FTS autoscalinggroup              ===//
@@ -766,7 +766,7 @@ const rhel8FtsServerAmi = new ec2.LookupMachineImage({
 });
 
 const rhel8AsgFtsProp = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG005,
   subnetID: 'subnet-0b084447b36c71c2e',
@@ -782,7 +782,7 @@ const rhel8AsgFtsProp = {
   desiredCapacity: 1,
   maxCapacity: 1,
 }
-const RHEL8ASGFts = new RHEL8LaunchASGAppServer(app, 'RHEL8ASGFtsServer', rhel8AsgFtsProp )
+const RHEL8ASGFts = new RHEL8LaunchASGAppServer(app, 'RHEL8ASGFtsServer', rhel8AsgFtsProp)
 
 //====================================================//
 //=== launch 11: NFS autoscalinggroup              ===//
@@ -794,7 +794,7 @@ const rhel8NfsServerAmi = new ec2.LookupMachineImage({
 });
 
 const rhel8AsgNfsProp = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG004,
   subnetID: 'subnet-0b084447b36c71c2e',
@@ -810,7 +810,7 @@ const rhel8AsgNfsProp = {
   desiredCapacity: 1,
   maxCapacity: 1,
 }
-const RHEL8ASGNfs = new RHEL8LaunchASGAppServer(app, 'RHEL8ASGNfsServer', rhel8AsgNfsProp )
+const RHEL8ASGNfs = new RHEL8LaunchASGAppServer(app, 'RHEL8ASGNfsServer', rhel8AsgNfsProp)
 
 //====================================================//
 //=== launch 12: 3DIndex autoscalinggroup          ===//
@@ -822,7 +822,7 @@ const rhel83DIndexServerAmi = new ec2.LookupMachineImage({
 });
 
 const rhel8Asg3DIndexProp = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG004,
   subnetID: 'subnet-0b084447b36c71c2e',
@@ -838,7 +838,7 @@ const rhel8Asg3DIndexProp = {
   desiredCapacity: 1,
   maxCapacity: 1,
 }
-const RHEL8ASG3DIndex = new RHEL8LaunchASGAppServer(app, 'RHEL8ASG3DIndexServer', rhel8Asg3DIndexProp )
+const RHEL8ASG3DIndex = new RHEL8LaunchASGAppServer(app, 'RHEL8ASG3DIndexServer', rhel8Asg3DIndexProp)
 //====================================================//
 //=== launch 13: federated autoscalinggroup         ===//
 //====================================================//
@@ -849,7 +849,7 @@ const rhel8OrchServerAmi = new ec2.LookupMachineImage({
 });
 
 const rhel8AsgOrchProp = {
-  env: {account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION},
+  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
   vpc: vpc,
   securityGroup: mySG002,
   subnetID: 'subnet-0b084447b36c71c2e',
@@ -865,4 +865,4 @@ const rhel8AsgOrchProp = {
   desiredCapacity: 1,
   maxCapacity: 1,
 }
-const RHEL8ASGOrch = new RHEL8LaunchASGAppServer(app, 'RHEL8ASGOrchServer',rhel8AsgOrchProp)
+const RHEL8ASGOrch = new RHEL8LaunchASGAppServer(app, 'RHEL8ASGOrchServer', rhel8AsgOrchProp)

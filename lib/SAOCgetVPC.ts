@@ -1,6 +1,6 @@
 import { Stack, StackProps } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import { aws_ec2} from 'aws-cdk-lib';
+import { aws_ec2 } from 'aws-cdk-lib';
 import { IVpc } from 'aws-cdk-lib/aws-ec2';
 import { Environment } from 'aws-cdk-lib';
 

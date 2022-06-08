@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UserIntentions mediaName="CODE\linux_a64\X3D_DASH.media" mediaVersion="424">
+  <SetVariable name="Java@jdk" value="/appl/java/jdk-11.0.14.1+1"/>
+  <SetVariable name="installEmbeddedServerJRE" value="false"/>
+  <SetVariable name="uwp_sqlserver_server" value="ip-10-4-12-10.us-west-2.compute.internal"/>
+  <SetVariable name="uwp_sqlserver_database_name" value="dashdb"/>
+  <SetVariable name="uwp_sqlserver_setup_database_user" value="x3ddashadmin"/>
+  <SetVariable name="uwp_sqlserver_setup_database_password" value="Passport123"/>
+  <SetVariable name="uwp_sqlserver_database_user" value="x3ddash"/>
+  <SetVariable name="uwp_sqlserver_database_password" value="Passport123"/>
+  <SetVariable name="X3DCSMA_3DPassportURL" value="https://3dpassport.mydomain:443/3dpassport"/>
+  <SetVariable name="X3DCSMA_LicenceServer" value="https://dsls.mydomain:4085"/>
+  <SetVariable name="X3DCSMA_3DDashboardURL" value="https://3ddashboard.mydomain:443/3ddashboard"/>
+  <SetVariable name="X3DCSMA_3DCompassURL" value="https://3dspace.mydomain:443/3dspace"/>
+  <SetVariable name="X3DCSMA_6WTAGURL" value="https://3dspace.mydomain:443/3dspace"/>
+  <SetVariable name="X3DCSMA_SMTP_HOST" value="localhost"/>
+  <SetVariable name="X3DCSMA_SMTP_MAIL_SENDER" value="admin_platform@3ddashboard.mydomain"/>
+  <SetVariable name="install_Embedded_TomEE" value="false"/>
+  <SetVariable name="TomEEPath" value="/appl/tomeePlus/apache-tomee-plus-8.0.6"/>
+  <SetVariable item="sqlserver" name="dsi_database_type" value="true"/>
+  <SetVariable name="dsi_domain_untrusted" value="untrusted.mydomain"/>
+  <SetVariable name="dsi_uwaProxy_domainWhiteList" value=".*"/>
+  <SetVariable name="dsi_shared_dir" value="/appl/ds/r2022x/data/3ddashboardData"/>
+  <SetVariable name="DSYWelcomePanel"/>
+  <SetVariable name="TARGET_PATH" value="/appl/ds/r2022x/3DDashboard"/>
+  <SetVariable name="FinishPanel"/>
+</UserIntentions>

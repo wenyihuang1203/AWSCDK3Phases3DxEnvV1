@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UserIntentions mediaName="CODE\linux_a64\X3D_INTF_SC.media" mediaVersion="424.1">
+  <SetVariable name="Java@jdk" value="/appl/java/jdk"/>
+  <SetVariable name="installEmbeddedServerJRE" value="false"/>
+  <SetVariable name="X3DCSMA_3DPassportURL" value="https://srv1.dev.dsisp1.com/3dpassport"/>
+  <SetVariable name="X3DCSMA_3DDashboardURL" value="https://srv1.dev.dsisp1.com/3ddashboard"/>
+  <SetVariable name="X3DCSMA_3DCompassURL" value="https://srv1.dev.dsisp1.com/3dspace"/>
+  <SetVariable name="X3DCSMA_3DSWYMURL" value="https://srv1.dev.dsisp1.com/3dswym"/>
+  <SetVariable name="X3DCSMA_3DNotificationURL" value="https://srv1.dev.dsisp1.com/3dnotification"/>
+  <SetVariable name="NODEINFRACONF_DIR" value="/appl/ds/r2022x/data/3dnotificationdata"/>
+  <SetVariable name="NODEINFRALOG_DIR" value="/appl/ds/r2022x/logs/3dnotificationlogs"/>
+  <SetVariable name="NODEINFRATMP_DIR" value="/appl/ds/r2022x/temp/3dnotificationtemp"/>
+  <SetVariable name="X3DCSMA_SMTP_HOST" value="mail.aws.com"/>
+  <SetVariable name="X3DCSMA_SMTP_MAIL_SENDER" value="admin_platform@myemail.com"/>
+  <SetVariable name="X3DCSMA_SMTP_CERT" value="true"/>
+  <SetVariable name="DB_MSSQL_SERVER" value="localhost"/>
+  <SetVariable name="DB_MSSQL_DBNAME" value="x3dnotificationdb"/>
+  <SetVariable name="DB_MSSQL_ADMIN_USER" value="x3dsadmin"/>
+  <SetVariableProtected name="DB_MSSQL_ADMIN_PASSWORD" value="Put your password here."/>
+  <SetVariable name="DB_MSSQL_USER" value="x3ds"/>
+  <SetVariableProtected name="DB_MSSQL_PASSWORD" value="Put your password here."/>
+  <SetVariable name="NODEBACKEND_URL_PORT" value="8089"/>
+  <SetVariable item="sqlserver" name="DB_TYPE" value="true"/>
+  <SetVariable name="DSYWelcomePanel"/>
+  <SetVariable name="TARGET_PATH" value="/appl/ds/r2022x/3dnotification"/>
+  <SetVariable name="FinishPanel"/>
+</UserIntentions>

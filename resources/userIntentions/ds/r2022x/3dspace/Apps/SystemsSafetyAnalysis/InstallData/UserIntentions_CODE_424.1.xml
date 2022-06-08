@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UserIntentions mediaName="CODE\linux_a64\CATIA_FTT.media" mediaVersion="424.1">
+  <SetVariable name="PATH_PH_Server" value="/appl/ds/r2022x/3dspace"/>
+  <SetVariable name="Text_SuperUserName" value="creator"/>
+  <SetVariableProtected name="Text_SuperUserPwd" value="Put your password here."/>
+  <SetVariable name="Check_ExecuteFamiliesScript" value="true"/>
+  <SetVariable name="Java@jre" value="/appl/java/jdk"/>
+  <SetVariable name="myWebSocketPort" value="2097"/>
+  <SetVariable name="myStartPortRange" value="2098"/>
+  <SetVariable name="myEndPortRange" value="2108"/>
+  <SetVariable name="mySocketPortNumber" value="57000"/>
+  <SetVariable name="myPathToSelectKEYSSLFile" value=""/>
+  <SetVariable name="myPathToSelectCERSSLFile" value=""/>
+  <SetVariable name="DSYWelcomePanel"/>
+  <SetVariable name="TARGET_PATH" value="/appl/ds/r2022x/3dspace/Apps/SystemsSafetyAnalysis"/>
+  <!--CATFTT_TP - CATIA Systems Safety and Quality Analysis Installation Technical Product-->
+  <SetVariable item="CODE\linux_a64\CATFTT_TP.prd" name="SelectProduct" value="true"/>
+  <!--SFY_RP - CATIA Systems Safety Analyst Extended-->
+  <SetVariable item="CODE\linux_a64\SFY_RP.prd" name="SelectProduct" value="true"/>
+  <SetVariable name="FinishPanel"/>
+</UserIntentions>

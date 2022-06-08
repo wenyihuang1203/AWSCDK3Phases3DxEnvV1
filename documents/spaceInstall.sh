@@ -1,5 +1,6 @@
-#!/usr/bin/bash
-sudo echo "spaceInstall.sh started" >> /tmp/spaceInstall.log
+#!/usr/bin/env bash
+
+sudo echo "spaceInstall.sh started" >>/tmp/spaceInstall.log
 aws s3 cp s3://dsis-3dexp-binaries-us-east-2-201113909371/r2022x/ga/Platform/3DSpace-V6R2022x.Linux64.tar.gz /tmp/3DSpace-V6R2022x.Linux64.tar.gz
 aws s3 cp s3://dsis-3dexp-binaries-us-east-2-201113909371/r2022x/UserIntentions/UserIntentions_3dspaceGA.xml /tmp/UserIntentions_3dspaceGA.xml
 sudo mkdir /var/DassaultSystemes
@@ -7,11 +8,11 @@ sudo chmod 777 /var/DassaultSystemes
 cd /tmp
 sudo tar xvfz /tmp/3DSpace-V6R2022x.Linux64.tar.gz
 sudo rm -f /tmp/3DSpace-V6R2022x.Linux64.tar.gz
-sudo echo "before installing 3dspace platform" >> /tmp/spaceInstall.log
-date >> /tmp/spaceInstall.log
+sudo echo "before installing 3dspace platform" >>/tmp/spaceInstall.log
+date >>/tmp/spaceInstall.log
 sudo /tmp/3DSpace.Linux64/1/StartTUI.sh --silent /tmp/UserIntentions_3dspaceGA.xml
-sudo echo "after installing 3dspace platform" >> /tmp/spaceInstall.log
-date >> /tmp/spaceInstall.log
+sudo echo "after installing 3dspace platform" >>/tmp/spaceInstall.log
+date >>/tmp/spaceInstall.log
 sudo rm -f -R /tmp/3DSpace.Linux64
 aws s3 cp s3://dsis-3dexp-binaries-us-east-2-201113909371/r2022x/ga/Platform/DS_Installer-V6R2022x.Linux64.tar.gz /tmp/DS_Installer-V6R2022x.Linux64.tar.gz
 aws s3 cp s3://dsis-3dexp-binaries-us-east-2-201113909371/r2022x/ga/Platform/3DExplore-V6R2022x.Linux64.tar.gz /tmp/3DExplore-V6R2022x.Linux64.tar.gz
@@ -108,4 +109,4 @@ sudo semanage port -a -t http_port_t -p tcp 9080
 sudo semanage port -a -t http_port_t -p tcp 8070
 sudo setsebool -P httpd_can_network_connect on
 sudo systemctl restart httpd
-sudo echo "spaceInstall.sh ended" >> /tmp/spaceInstall.log
+sudo echo "spaceInstall.sh ended" >>/tmp/spaceInstall.log
