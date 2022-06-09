@@ -41,6 +41,8 @@ while read -r line; do
     IFS='-' read -r -a array1 <<< ${array[0]}
     sudo /tmp/${array1[0]}.Linux64/1/StartTUI.sh -installerPath /tmp/DS_Installer.Linux64/1 --silent /tmp/${array[1]}
     sudo rm -f -R /tmp/${array1[0]}.Linux64
+    sudo rm -f /tmp/${array[1]}
+    sudo rm -f /tmp/*.sh
 done < /tmp/webModulesSubList1.log
 #########################################################################################
 sudo chown -R webapp:webapp /appl/ds
