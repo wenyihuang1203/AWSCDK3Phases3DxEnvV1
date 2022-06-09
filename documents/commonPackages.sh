@@ -23,4 +23,5 @@ sudo yum install xorg-x11-xauth -y
 sudo yum install python2 -y
 sudo yum install python3 -y
 sudo yum install policycoreutils-python-utils -y
+sudo yum install dos2unix -y
 sudo echo "commonPackages.sh ended" >>/tmp/commonPackages.log
