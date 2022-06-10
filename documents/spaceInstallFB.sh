@@ -100,7 +100,7 @@ done < /tmp/webModulesListFD2.log
 #sudo rm -f /tmp/*.sh
 #sudo rm -f /tmp/*.xml
 sudo chown -R webapp:webapp /appl/ds
-sudo semanage port -a -t http_port_t -p tcp 9080
+sudo semanage port -a -t http_port_t -p tcp 8080
 sudo semanage port -a -t http_port_t -p tcp 8070
 sudo setsebool -P httpd_can_network_connect on
 sudo systemctl restart httpd
