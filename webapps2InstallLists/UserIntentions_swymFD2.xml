@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UserIntentions mediaName="CODE\linux_a64\X3D_SWYM.media" mediaVersion="424.2">
+  <SetVariable name="Java@jdk" value="/appl/java/jdk-11.0.14.1+1"/>
+  <SetVariable name="installEmbeddedServerJRE" value="false"/>
+  <SetVariable name="X3DCSMA_3DPassportURL" value="https://3dpassport.mydomain:443/3dpassport"/>
+  <SetVariable name="X3DCSMA_LicenceServer" value="https://dsls.mydomain:4085"/>
+  <SetVariable name="X3DCSMA_3DSWYM_FULL_TEXT_SEARCH" value="http://__cloudviewurl__:29000"/>
+  <SetVariable name="X3DCSMA_3DDashboardURL" value="https://3ddashboard.mydomain:443/3ddashboard"/>
+  <SetVariable name="X3DCSMA_3DCompassURL" value="https://3dspace.mydomain:443/3dspace"/>
+  <SetVariable name="X3DCSMA_6WTAGURL" value="https://3dspace.mydomain:443/3dspace"/>
+  <SetVariable name="X3DCSMA_3DSWYMURL" value="https://3dswym.mydomain:443/3dswym"/>
+  <SetVariable name="X3DCSMA_3DCommentURL" value="https://3dcomment.mydomain:443/3dcomment"/>
+  <SetVariable name="X3DCSMA_3DNotificationURL" value="https://3dnotification.mydomain:443/3dnotification"/>
+  <SetVariable name="SHARED_DIR" value="/appl/ds/r2022x/3DSwymData"/>
+  <SetVariable name="LOG_DIR" value="/appl/ds/r2022x/logs/3DSwym"/>
+  <SetVariable name="TMP_DIR" value="/tmp/DassaultSystemes/3DSwym"/>
+  <SetVariable name="install_Embedded_TomEE" value="false"/>
+  <SetVariable name="TomEEPath" value="/appl/tomeePlus/apache-tomee-plus-8.0.6"/>
+  <SetVariable name="DB_MSSQL_SERVER" value="ip-10-4-12-10.us-west-2.compute.internal"/>
+  <SetVariable name="DB_MSSQL_DBNAME" value="x3dswym_social"/>
+  <SetVariable name="DB_MSSQL_DBNAME_MEDIA" value="x3dswym_media"/>
+  <SetVariable name="DB_MSSQL_DBNAME_WP" value="x3dswym_widget"/>
+  <SetVariable name="DB_MSSQL_ADMIN_USER" value="x3ds_admin"/>
+  <SetVariable name="DB_MSSQL_ADMIN_PASSWORD" value="Passport123"/>
+  <SetVariable name="DB_MSSQL_USER" value="x3ds"/>
+  <SetVariable name="DB_MSSQL_PASSWORD" value="Passport123"/>
+  <SetVariable item="sqlserver" name="DB_TYPE" value="true"/>
+  <SetVariable name="IS_BATCH_SERVER" value="true"/>
+  <SetVariable name="ENOVIA_USER" value="admin_platform"/>
+  <SetVariable name="ENOVIA_PASSWORD" value="Passport123"/>
+  <SetVariable name="X3DCSMA_SMTP_HOST" value="localhost"/>
+  <SetVariable name="X3DCSMA_SMTP_MAIL_SENDER" value="admin_platform@3dswym.mydomain"/>
+  <SetVariable name="certificates_repository" value="/tmp/DassaultSystemes"/>
+  <SetVariable name="CV_ADMIN_PASSWORD" value="Passport123"/>
+  <SetVariable name="DATADIR" value="/appl/ds/r2022x/3DSwym/linux_a64/datadir"/>
+  <SetVariable name="DSYWelcomePanel"/>
+  <SetVariable name="TARGET_PATH" value="/appl/ds/r2022x/3DSwym"/>
+  <!--3DSwym Foundation-->
+  <SetVariable item="CODE\linux_a64\X3DSWYM_TP.prd" name="SelectProduct" value="true"/>
+  <!--3DSwym Video Converter-->
+  <SetVariable item="CODE\linux_a64\X3DVICO_TP.prd" name="SelectProduct" value="true"/>
+  <!--3DSwym Index-->
+  <SetVariable item="CODE\linux_a64\X3DSWCV_TP.prd" name="SelectProduct" value="true"/>
+  <SetVariable name="FinishPanel"/>
+</UserIntentions>

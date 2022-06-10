@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UserIntentions mediaName="CODE\linux_a64\ENOVIA_SXI.media" mediaVersion="424.2">
+  <SetVariable name="FullCloud_URL" value="http://localhost:19000"/>
+  <SetVariable name="FullCloud_NumSlices" value="1"/>
+  <SetVariable name="FullCloud_NumAnalyzers" value="1"/>
+  <SetVariable name="FullCloud_AdminPassword" value="Passport123"/>
+  <SetVariable item="Simple" name="Radio_mode" value="true"/>
+  <SetVariable name="DSYWelcomePanel"/>
+  <SetVariable name="TARGET_PATH" value="/appl/ds/r2022x/3DSpaceIndex"/>
+  <SetVariable name="FinishPanel"/>
+</UserIntentions>

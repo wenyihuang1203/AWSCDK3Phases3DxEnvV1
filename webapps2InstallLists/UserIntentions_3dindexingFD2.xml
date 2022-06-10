@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UserIntentions mediaName="CODE\linux_a64\ENOVIA_PIX.media" mediaVersion="424.2">
+  <SetVariable name="BBD_HOST" value="localhost"/>
+  <SetVariable name="BBD_PORT" value="8070"/>
+  <SetVariable name="BBD_URI" value="internal"/>
+  <SetVariable name="BBD_USER" value="3DIndexAdminUser"/>
+  <SetVariable name="BBD_PASSWD" value="Passport123"/>
+  <SetVariable name="BBD_ROLE" value="VPLMAdmin.Company Name.Default"/>
+  <SetVariable name="BBD_PATH" value="/appl/ds/r2022x/VolumeSearch/3DIndexes"/>
+  <SetVariable name="DSYWelcomePanel"/>
+  <SetVariable name="TARGET_PATH" value="/appl/ds/r2022x/VolumeSearch"/>
+  <SetVariable name="FinishPanel"/>
+</UserIntentions>

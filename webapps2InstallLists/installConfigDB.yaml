@@ -1,0 +1,70 @@
+name: installConfigDB
+description: installConfigDB
+schemaVersion: 1.0
+
+constants:
+  - SQLFileName:
+      type: string
+      value: 'ibm-semeru-open-jdk_x64_linux_11.0.14.1_1_openj9-0.30.1.tar.gz'
+  - mssqlpassword:
+      type: string
+      value: 'Sqlserver1'
+  
+
+phases:
+  - name: build
+    steps:
+      - name: createDirectoryAndMount
+        action: ExecuteBash
+        inputs:
+          commands:
+            - |
+              sudo echo "create db and sub directories " >> /tmp/installConfigDB.log
+              sudo yum upgrade -y
+              sudo mkdir /db
+              sudo mkdir /db/system
+              sudo mkdir /db/user
+              sudo mkdir /db/temp
+              sudo mkdir /db/txlogs
+              sudo mkfs -t ext4 /dev/nvme1n1
+              sudo mkfs -t ext4 /dev/nvme2n1
+              sudo mkfs -t ext4 /dev/nvme3n1
+              sudo mkfs -t ext4 /dev/nvme4n1
+              sudo mount /dev/nvme1n1 /db/system
+              sudo mount /dev/nvme2n1 /db/user
+              sudo mount /dev/nvme3n1 /db/temp
+              sudo mount /dev/nvme4n1 /db/txlogs
+              sudo echo "end of createDirectoryAndMount" >> /tmp/installConfigDB.log
+              
+      - name: installSqlServer2019
+        action: ExecuteBash
+        inputs:
+          commands:
+            - |
+              sudo echo 'Installing requirement MSSQL Server and database' >> /tmp/installConfigDB.log
+              aws s3 cp s3://dsis-3dexp-binaries-us-east-2-201113909371/r2022x/components/create22xdbs.sql /tmp/create22xdbs.sql
+              export MSSQL_SA_PASSWORD='{{ mssqlpassword }}'
+              export MSSQL_PID='express'
+              export SQL_ENABLE_AGENT='y'
+              sudo echo 'Adding Microsoft repositories...' >> /tmp/installConfigDB.log
+              curl -o /etc/yum.repos.d/mssql-server.repo https://packages.microsoft.com/config/rhel/8/mssql-server-2019.repo
+              curl -o /etc/yum.repos.d/msprod.repo https://packages.microsoft.com/config/rhel/8/prod.repo
+              sudo echo 'Installing SQL Server...' >> /tmp/installConfigDB.log
+              yum install -y mssql-server
+              sudo echo 'Running mssql-conf setup...'
+              sudo systemctl stop mssql-server
+              MSSQL_SA_PASSWORD=${MSSQL_SA_PASSWORD} MSSQL_PID=${MSSQL_PID} /opt/mssql/bin/mssql-conf -n setup accept-eula
+              sudo echo 'Installing mssql-tools and unixODBC developer...'
+              ACCEPT_EULA=Y yum install -y mssql-tools unixODBC-devel
+              sudo echo 'Add SQL Server tools to the path by default:'
+              echo PATH="$PATH:/opt/mssql-tools/bin" >> ~/.bash_profile
+              echo export PATH="$PATH:/opt/mssql-tools/bin" >> ~/.bashrc
+              source ~/.bashrc
+              sudo echo 'echo Restarting SQL Server...'
+              sudo systemctl restart mssql-server
+              sudo echo 'End Install MS SQL Server 2019' >> /tmp/installConfigDB.log
+              sudo chmod 777 /db/system 
+              /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P ${MSSQL_SA_PASSWORD} -i /tmp/create22xdbs.sql -o /tmp/ceate22xdbs.log
+              
+
+              

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UserIntentions mediaName="CODE\linux_a64\X3D_PASS.media" mediaVersion="424.1">
+  <SetVariable name="Java@jdk" value="/appl/java/jdk"/>
+  <SetVariable name="installEmbeddedServerJRE" value="false"/>
+  <SetVariable name="install_Embedded_TomEE" value="false"/>
+  <SetVariable name="TomEEPath" value="/appl/tomee/3dpassport"/>
+  <SetVariable name="PASS_MSSQL_SQLURL_HOST_AND_PORT" value="localhost"/>
+  <SetVariable name="PASS_MSSQL_SQLURL_SCHEMA" value="x3dpassportdb"/>
+  <SetVariable name="PASS_MSSQL_SQLUserAdmin" value="x3dsadmin"/>
+  <SetVariableProtected name="PASS_MSSQL_SQLPasswordAdmin" value="Put your password here."/>
+  <SetVariable name="PASS_MSSQL_SQLUser" value="x3ds"/>
+  <SetVariableProtected name="PASS_MSSQL_SQLPassword" value="Put your password here."/>
+  <SetVariable name="PASS_MSSQL_SQLURLCas_HOST_AND_PORT" value="localhost"/>
+  <SetVariable name="PASS_MSSQL_SQLURLCas_SCHEMA" value="x3dpassport_tokendb"/>
+  <SetVariable name="PASS_MSSQL_SQLUserCas" value="x3dsadmin"/>
+  <SetVariableProtected name="PASS_MSSQL_SQLPasswordCas" value="Put your password here."/>
+  <SetVariable name="PASS_MSSQL_DatabaseConnectionCheck" value="true"/>
+  <SetVariable name="X3DCSMA_3DPassportURL" value="https://srv1.dev.dsisp1.com/3dpassport"/>
+  <SetVariable name="X3DCSMA_3DCompassURL" value="https://srv1.dev.dsisp1.com/3dspace"/>
+  <SetVariable name="X3DCSMA_SMTP_HOST" value="mail.aws.com"/>
+  <SetVariable name="X3DCSMA_SMTP_MAIL_SENDER" value="admin_platform@myemail.com"/>
+  <SetVariable name="ForceLowerCase" value="false"/>
+  <SetVariable item="sqlserver" name="DatabaseType" value="true"/>
+  <SetVariable name="AdminPlatformEmail" value="admin_platform@myemail.com"/>
+  <SetVariableProtected name="AdminPlatformPassword" value="Put your password here."/>
+  <SetVariable name="DSYWelcomePanel"/>
+  <SetVariable name="TARGET_PATH" value="/appl/ds/r2022x/3dpassport"/>
+  <SetVariable name="FinishPanel"/>
+</UserIntentions>

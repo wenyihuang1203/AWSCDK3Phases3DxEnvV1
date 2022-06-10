@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UserIntentions mediaName="CODE\linux_a64\X3D_SEAR.media" mediaVersion="424.1">
+  <SetVariable name="Java@jdk" value="/appl/java/jdk"/>
+  <SetVariable name="installEmbeddedServerJRE" value="false"/>
+  <SetVariable name="install_Embedded_TomEE" value="false"/>
+  <SetVariable name="TomEEPath" value="/appl/tomee/federated"/>
+  <SetVariable name="X3DCSMA_3DPassportURL" value="https://srv1.dev.dsisp1.com/3dpassport"/>
+  <SetVariable name="X3DCSMA_FEDERATED_SEARCH" value="https://srv1.dev.dsisp1.com/federated"/>
+  <SetVariable name="X3DCSMA_3DSpaceURL" value="https://srv1.dev.dsisp1.com/3dspace"/>
+  <SetVariable name="X3DCSMA_3DSWYMURL" value="https://srv1.dev.dsisp1.com/3dswym"/>
+  <SetVariable name="DSYWelcomePanel"/>
+  <SetVariable name="TARGET_PATH" value="/appl/ds/r2022x/federated"/>
+  <SetVariable name="FinishPanel"/>
+</UserIntentions>

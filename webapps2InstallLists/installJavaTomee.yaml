@@ -1,0 +1,21 @@
+name: InstallJavaTomee
+description: installJavaTomee
+schemaVersion: 1.0
+
+phases:
+  - name: build
+    steps:
+      - name: installJava
+        action: ExecuteBash
+        inputs:
+          commands:
+            - |
+              echo "Hello World! Build." >> /tmp/installJavaTomee.log
+              sudo useradd -m -p sal/Jvl0B52ok webapp
+              sudo usermod -aG wheel webapp
+              sudo mkfs -t ext4 /dev/nvme1n1
+              sudo e2label /dev/nvme1n1 /appl
+              sudo mkdir /appl
+              sudo echo "LABEL=/appl /appl ext4 defaults 1 2" >> /etc/fstab
+              sudo mount /appl
+              sudo chown -R webapp:webapp /appl

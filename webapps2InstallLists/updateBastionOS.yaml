@@ -1,0 +1,28 @@
+name: updateBastionLinuxOS
+description: updateBastionLinuxOS
+schemaVersion: 1.0
+
+phases:
+  - name: build
+    steps:
+      - name: runDnfUpdate
+        action: ExecuteBash
+        inputs:
+          commands:
+            - |
+              sudo echo "update OS and install httpd " >> /tmp/updateBastionLinuxOS.log
+              sudo yum upgrade -y
+              sudo useradd -m -p sal/Jvl0B52ok webapp
+              sudo usermod -aG wheel webapp
+              sudo yum install lsb -y
+              sudo yum install git -y
+              sudo yum install wget -y
+              sudo yum install lsof -y
+              sudo yum install telnet -y
+              sudo yum install net-tools -y
+              sudo yum install httpd -y
+              sudo yum install mod_ssl -y
+              sudo yum -y install nfs-utils
+              sudo systemctl restart httpd
+              sudo systemctl enable httpd
+              sudo yum install sed zip unzip curl -y

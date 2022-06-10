@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UserIntentions mediaName="CODE\linux_a64\ENOVIA_MCC.media" mediaVersion="424.1">
+  <SetVariable name="PATH_PH_Server" value="/appl/ds/r2022x/3dspace"/>
+  <SetVariable name="Text_SuperUserName" value="creator"/>
+  <SetVariableProtected name="Text_SuperUserPwd" value="Put your password here."/>
+  <SetVariable name="BOOL_UpdateDB" value="true"/>
+  <SetVariable item="CheckBox_ROHS" name="OptionsCheckBoxes" value="false"/>
+  <SetVariable item="CheckBox_ELV" name="OptionsCheckBoxes" value="false"/>
+  <SetVariable item="CheckBox_PACKAGING" name="OptionsCheckBoxes" value="false"/>
+  <SetVariable item="CheckBox_REACH" name="OptionsCheckBoxes" value="false"/>
+  <SetVariable item="CheckBox_ConfMineralSupport" name="OptionsCheckBoxes" value="false"/>
+  <SetVariable item="_All" name="OptionsCheckBoxes" value="true"/>
+  <SetVariable item="_None" name="OptionsCheckBoxes" value="false"/>
+  <SetVariable name="DSYWelcomePanel"/>
+  <SetVariable name="TARGET_PATH" value="/appl/ds/r2022x/3dspace/Apps/MaterialsComplianceCentral/V6R2022x"/>
+  <SetVariable name="FinishPanel"/>
+</UserIntentions>

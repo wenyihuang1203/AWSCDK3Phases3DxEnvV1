@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UserIntentions mediaName="CODE\linux_a64\X3D_CSMA.media" mediaVersion="424.1">
+  <SetVariable name="Java@jdk" value="/appl/java/jdk"/>
+  <SetVariable name="installEmbeddedServerJRE" value="false"/>
+  <SetVariable name="MSSQL_ConnectUser" value="x3dsadmin"/>
+  <SetVariable name="MSSQL_Instance" value="x3dspacedb"/>
+  <SetVariable name="MSSQL_Server" value="localhost"/>
+  <SetVariable name="MSSQL_Default_Data_FG" value=""/>
+  <SetVariable name="MSSQL_Default_Index_FG" value=""/>
+  <SetVariable item="SQL2008" name="Radio_DBChoice" value="true"/>
+  <SetVariableProtected name="X3DCSMA_creator_password" value="Put your password here."/>
+  <SetVariableProtected name="X3DCSMA_administor_password" value="Put your password here."/>
+  <SetVariable name="DATA_TARGET_PATH" value="/appl/ds/r2022x/data/3dspacedata"/>
+  <SetVariable name="BOOL_UpdateDB" value="true"/>
+  <SetVariable name="Text_DataTBS" value="^e(Text_DataTBS_wrap)"/>
+  <SetVariable name="Text_IndexTBS" value="^e(Text_IndexTBS_wrap)"/>
+  <SetVariable name="Text_DataTBS_wrap" value=""/>
+  <SetVariable name="Text_IndexTBS_wrap" value=""/>
+  <SetVariable name="VplmDataTBS" value=""/>
+  <SetVariable name="VplmIndexTBS" value=""/>
+  <SetVariable name="X3DCSMA_3DPassportURL" value="https://srv1.dev.dsisp1.com/3dpassport"/>
+  <SetVariable name="X3DCSMA_FULL_TEXT_SEARCH" value="http://ip-10-0-10-81.us-east-2.compute.internal:19000"/>
+  <SetVariable name="X3DCSMA_FEDERATED_SEARCH" value="https://srv1.dev.dsisp1.com/federated"/>
+  <SetVariable name="X3DCSMA_3DDashboardURL" value="https://srv1.dev.dsisp1.com/3ddashboard"/>
+  <SetVariable name="X3DCSMA_3DSpaceURL" value="https://srv1.dev.dsisp1.com/3dspace"/>
+  <SetVariable name="X3DCSMA_3DSWYMURL" value="https://srv1.dev.dsisp1.com/3dswym"/>
+  <SetVariable name="X3DCSMA_3DCommentURL" value="https://srv1.dev.dsisp1.com/3dcomment"/>
+  <SetVariable name="X3DCSMA_3DNotificationURL" value="https://srv1.dev.dsisp1.com/3dnotification"/>
+  <SetVariable name="X3DCSMA_3DMESSAGING_URL" value=""/>
+  <SetVariable name="X3DCSMA_SMTP_HOST" value="mail.aws.com"/>
+  <SetVariable name="X3DCSMA_SMTP_MAIL_SENDER" value="admin_platform@myemail.com"/>
+  <SetVariable name="X3DCSMA_build_archives" value="true"/>
+  <SetVariable name="X3DCSMA_deploy_archives" value="false"/>
+  <SetVariable item="BOOL_LargeJavaHeapSize" name="X3DCSMA_JavaHeapSize" value="true"/>
+  <SetVariable name="X3DCSMA_SXI_postinstall" value="false"/>
+  <SetVariable name="DSYWelcomePanel"/>
+  <SetVariable name="TARGET_PATH" value="/appl/ds/r2022x/3dspace"/>
+  <SetVariable name="FinishPanel"/>
+</UserIntentions>

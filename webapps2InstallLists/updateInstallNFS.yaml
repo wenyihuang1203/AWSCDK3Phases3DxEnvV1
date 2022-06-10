@@ -1,0 +1,41 @@
+name: updateInstallNFS
+description: updateInstallNFS
+schemaVersion: 1.0
+
+constants:
+  - NFSFileName:
+      type: string
+      value: 'NFS.tar.gz'
+  - mssqlpassword:
+      type: string
+      value: 'Sqlserver1'
+  
+
+phases:
+  - name: build
+    steps:
+      - name: createDirectoryAndMount
+        action: ExecuteBash
+        inputs:
+          commands:
+            - |
+              secho "make fs and mount to /appl directory " >> /tmp/updateInstallNFS.log
+              sudo yum upgrade -y
+              sudo useradd -m -p sal/Jvl0B52ok webapp
+              sudo usermod -aG wheel webapp
+              sudo mkfs -t ext4 /dev/nvme1n1
+              sudo e2label /dev/nvme1n1 /appl
+              sudo mkdir /appl
+              sudo echo "LABEL=/appl /appl ext4 defaults 1 2" >> /etc/fstab
+              sudo mount /appl
+              sudo chown -R webapp:webapp /appl
+              
+      - name: installNFS
+        action: ExecuteBash
+        inputs:
+          commands:
+            - |
+              sudo echo 'Installing 3DX Prereq and NFS' >> /tmp/updateInstallNFS.log
+              
+
+              

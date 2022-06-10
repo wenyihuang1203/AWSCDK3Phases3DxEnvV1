@@ -1,0 +1,14 @@
+s3://dsis-3dexp-binaries-us-east-2-201113909371/r2022x/ga/Webapps/ENOVIACollaborativeTasksFoundation-V6R2022x.Linux64.tar.gz
+s3://dsis-3dexp-binaries-us-east-2-201113909371/r2022x/ga/Webapps/ENOVIAEnterpriseChangeManagement-V6R2022x.Linux64.tar.gz
+s3://dsis-3dexp-binaries-us-east-2-201113909371/r2022x/ga/Webapps/ENOVIAIPClassificationFoundation-V6R2022x.Linux64.tar.gz
+s3://dsis-3dexp-binaries-us-east-2-201113909371/r2022x/ga/Webapps/ENOVIADocumentManagement-V6R2022x.Linux64.tar.gz
+s3://dsis-3dexp-binaries-us-east-2-201113909371/r2022x/ga/Webapps/ENOVIAIntegrationExchangeFramework-V6R2022x.Linux64.tar.gz
+s3://dsis-3dexp-binaries-us-east-2-201113909371/r2022x/ga/Webapps/ENOVIAProgramChangeControlFoundation-V6R2022x.Linux64.tar.gz
+s3://dsis-3dexp-binaries-us-east-2-201113909371/r2022x/ga/Webapps/ENOVIAProjectManagementFoundation-V6R2022x.Linux64.tar.gz
+s3://dsis-3dexp-binaries-us-east-2-201113909371/r2022x/ga/Webapps/ENOVIATraceableRequirementsManagementFoundation-V6R2022x.Linux64.tar.gz
+s3://dsis-3dexp-binaries-us-east-2-201113909371/r2022x/ga/Webapps/ENOVIAVariantManagementFoundation-V6R2022x.Linux64.tar.gz
+s3://dsis-3dexp-binaries-us-east-2-201113909371/r2022x/ga/Webapps/ENOVIAUnifiedX-CADDesignManagement-V6R2022x.Linux64.tar.gz
+s3://dsis-3dexp-binaries-us-east-2-201113909371/r2022x/ga/Webapps/ENOVIAX-CADDesignFoundation-V6R2022x.Linux64.tar.gz
+s3://dsis-3dexp-binaries-us-east-2-201113909371/r2022x/ga/Webapps/ENOVIAEngineeringBOMManagementFoundation-V6R2022x.Linux64.tar.gz
+
+

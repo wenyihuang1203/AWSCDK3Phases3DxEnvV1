@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UserIntentions mediaName="CODE\linux_a64\SIMULIA_3DOrchestration.media" mediaVersion="424">
+  <SetVariable name="certificates_repository" value="/tmp/DassaultSystemes"/>
+  <SetVariable name="useJreVersion" value="false"/>
+  <SetVariable name="newJrePath" value="/appl/java/jdk11.0.14.1+1"/>
+  <SetVariable item="EED_Config_3" name="EED_Determine_Configuration" value="true"/>
+  <SetVariable name="DSYWelcomePanel"/>
+  <SetVariable name="TARGET_PATH" value="/appl/ds/r2022x/3dorchestrate"/>
+  <!--3DEXPERIENCE Execution Server-->
+  <SetVariable item="CODE\linux_a64\EED.prd" name="SelectProduct" value="true"/>
+  <!--3DEXPERIENCE Execution Station-->
+  <SetVariable item="CODE\linux_a64\EER.prd" name="SelectProduct" value="true"/>
+  <!--SIMULIA Station Adapter Executors-->
+  <SetVariable item="CODE\linux_a64\SIMEERA_TP.prd" name="SelectProduct" value="true"/>
+  <SetVariable name="FinishPanel"/>
+</UserIntentions>
